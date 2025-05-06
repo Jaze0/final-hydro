@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('sensor_data', function (Blueprint $table) {
-            //
+            $table->decimal('water_level', 5, 2)->after('soil_moisture'); // Add the new water_level column
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('sensor_data', function (Blueprint $table) {
-            //
+            $table->dropColumn('water_level'); // Drop the water_level column
         });
     }
 };

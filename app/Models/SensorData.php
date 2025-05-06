@@ -10,7 +10,12 @@ class SensorData extends Model
     use HasFactory;
 
     // Add the $fillable property to allow mass assignment
-    protected $fillable = ['temperature', 'humidity'];
+    protected $fillable = [
+        'temperature',
+        'humidity',
+        'soil_moisture',
+        'water_level',
+    ];
 
     // Optionally, if your table is not the default "sensor_data", you can set the table name like this:
     // protected $table = 'sensor_data'; 

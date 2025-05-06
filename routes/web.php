@@ -16,7 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $data = SensorData::latest()->take(10)->get();
-    return view('dashboard', compact('data'));
+    return view('dashboard'); // Redirect to the dashboard
 });
-Route::get('/dashboard', [SensorDataController::class, 'showDashboard']);
